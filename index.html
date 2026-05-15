@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowerence – Premium guldastalar va tezkor yetkazib berish</title>
+    <meta name="description" content="Flowerence - Toshkent shahri bo'ylab eng sarxil gullarni 24/7 tezkor yetkazib beramiz. Premium guldastalar, qutilar va individual yondashuv.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <a href="#" class="logo">Flowerence</a>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Bosh sahifa</a>
+                <a href="#catalog" class="nav-link">Katalog</a>
+                <a href="#about" class="nav-link">Biz haqimizda</a>
+                <a href="#delivery" class="nav-link">Yetkazib berish</a>
+                <a href="#contacts" class="nav-link">Kontaktlar</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="cart-icon" id="cart-btn">
+                    <i class="fa-solid fa-bag-shopping fa-xl"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">Bog'lanish</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home" style="background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)), url('images/hero.png');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Flowerence – Tuyg'ularingizning go'zal ifodasi.</h1>
+                    <p>Toshkent shahri bo'ylab eng sarxil gullarni 24/7 tezkor yetkazib beramiz. Har bir guldasta - bu san'at asari.</p>
+                    <a href="#catalog" class="btn btn-primary">Gullarni tanlash</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Mashhur toifalar</h2>
+                <div class="category-grid">
+                    <!-- Category 1 -->
+                    <div class="category-card">
+                        <img src="images/cat_birthday.png" alt="Tug'ilgan kun uchun">
+                        <div class="category-overlay">
+                            <h3>Tug'ilgan kun uchun</h3>
+                            <p>Yaqinlaringizni xursand qiling</p>
+                        </div>
+                    </div>
+                    <!-- Category 2 -->
+                    <div class="category-card">
+                        <img src="images/cat_romantic.png" alt="Romantik uchrashuvlar">
+                        <div class="category-overlay">
+                            <h3>Romantik uchrashuvlar</h3>
+                            <p>Ishqingizni gullar bilan ayting</p>
+                        </div>
+                    </div>
+                    <!-- Category 3 -->
+                    <div class="category-card">
+                        <img src="images/cat_boxes.png" alt="Premium qutilar">
+                        <div class="category-overlay">
+                            <h3>Premium qutilar</h3>
+                            <p>Eksklyuziv sovg'alar to'plami</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog Section -->
+        <section class="products" id="catalog">
+            <div class="container">
+                <h2 class="section-title">Mijozlarimiz tanlovi</h2>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/prod_spring.png" alt="Bahor nafasi">
+                        </div>
+                        <div class="product-info">
+                            <h4>Bahor nafasi</h4>
+                            <p class="product-price">250 000 so'm</p>
+                            <button class="add-to-cart">Savatga qo'shish</button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/prod_roses.png" alt="Ehtirosli atirgullar">
+                        </div>
+                        <div class="product-info">
+                            <h4>Ehtirosli atirgullar</h4>
+                            <p class="product-price">450 000 so'm</p>
+                            <button class="add-to-cart">Savatga qo'shish</button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/prod_white.png" alt="Oq orzu">
+                        </div>
+                        <div class="product-info">
+                            <h4>Oq orzu</h4>
+                            <p class="product-price">320 000 so'm</p>
+                            <button class="add-to-cart">Savatga qo'shish</button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/prod_royal.png" alt="Qirollik guldastasi">
+                        </div>
+                        <div class="product-info">
+                            <h4>Qirollik guldastasi</h4>
+                            <p class="product-price">890 000 so'm</p>
+                            <button class="add-to-cart">Savatga qo'shish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Nega aynan Flowerence?</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-leaf"></i>
+                        <h3>Faqat yangi gullar</h3>
+                        <p>Har kuni ertalab eng sarxil gullarni to'g'ridan-to'g'ri issiqxonalardan olib kelamiz.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <h3>Tezkor yetkazib berish</h3>
+                        <p>Toshkent bo'ylab buyurtmangizni 60 daqiqa ichida manzilingizga yetkazamiz.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>Individual yondashuv</h3>
+                        <p>Har bir mijoz uchun alohida guldasta dizayni va tabriknoma taqdim etamiz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">Flowerence</div>
+                    <p>Tabiat go'zalligi sizning uyingizda. Biz sizga va yaqinlaringizga quvonch ulashishdan baxtiyormiz.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Tezkor havolalar</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Bosh sahifa</a></li>
+                        <li><a href="#catalog">Katalog</a></li>
+                        <li><a href="#about">Biz haqimizda</a></li>
+                        <li><a href="#delivery">Yetkazib berish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4 class="footer-title">Kontaktlar</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-phone"></i> +998 90 123 45 67</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Toshkent shahri, Amir Temur ko'chasi, 15-uy</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@flowerence.uz</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Flowerence Premium Flower Store. Barcha huquqlar himoyalangan.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
