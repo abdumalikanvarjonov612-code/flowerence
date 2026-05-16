@@ -1,72 +1,77 @@
-// Interactivity for Flowerence
-
+/* 4-qadam: Interaktivlik (JS) */
 document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('header');
-    const cartCount = document.querySelector('.cart-count');
-    const addToCartBtns = document.querySelectorAll('.add-to-cart');
-    let count = 0;
+    let cartCount = 0;
+    let totalPrice = 0;
+    const cartItems = [];
+    
+    const cartDisplay = document.getElementById('cart-count');
+    const buttons = document.querySelectorAll('.add-to-cart');
+    
+    // Modal elements
+    const cartBtn = document.getElementById('cart-btn');
+    const cartModal = document.getElementById('cart-modal');
+    const closeBtn = document.querySelector('.close-btn');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalPrice = document.getElementById('cart-total-price');
 
-    // Sticky Header
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    // Add to cart
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productCard = e.target.closest('.product-card');
+            const productName = productCard.querySelector('h3').innerText;
+            const priceText = productCard.querySelector('.price').innerText;
+            const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+            
+            cartCount++;
+            totalPrice += price;
+            cartDisplay.innerText = cartCount;
+            
+            cartItems.push({ name: productName, price: price });
+            
+            // Visual effect
+            const originalText = button.innerText;
+            button.innerText = "Qo'shildi!";
+            button.style.background = "#9DC183";
+            
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.style.background = "#2C3E50";
+            }, 1500);
+        });
+    });
+
+    // Open Modal
+    cartBtn.addEventListener('click', () => {
+        updateCartModal();
+        cartModal.style.display = 'block';
+    });
+
+    // Close Modal
+    closeBtn.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === cartModal) {
+            cartModal.style.display = 'none';
         }
     });
 
-    // Add to Cart Logic
-    addToCartBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            count++;
-            cartCount.textContent = count;
-            
-            // Visual feedback
-            btn.textContent = 'Qo\'shildi!';
-            btn.style.background = '#9DC183';
-            
-            setTimeout(() => {
-                btn.textContent = 'Savatga qo\'shish';
-                btn.style.background = '#FFD1DC';
-            }, 2000);
-
-            // Simple animation for cart icon
-            const icon = document.querySelector('.cart-icon i');
-            icon.style.transform = 'scale(1.2)';
-            setTimeout(() => icon.style.transform = 'scale(1)', 200);
-        });
-    });
-
-    // Smooth scroll for anchors
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    function updateCartModal() {
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Savatingiz hozircha bo\'sh.</p>';
+        } else {
+            cartItemsContainer.innerHTML = '';
+            cartItems.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <h4>${item.name}</h4>
+                    <p>${item.price.toLocaleString('uz-UZ')} so'm</p>
+                `;
+                cartItemsContainer.appendChild(div);
             });
-        });
-    });
-
-    // Scroll reveal animation using Intersection Observer
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Elements to animate on scroll
-    const animateElements = document.querySelectorAll('.category-card, .product-card, .feature-item');
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)';
-        observer.observe(el);
-    });
+        }
+        cartTotalPrice.innerText = totalPrice.toLocaleString('uz-UZ');
+    }
 });
